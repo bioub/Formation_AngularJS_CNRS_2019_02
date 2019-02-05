@@ -66,3 +66,25 @@ Pour récupéré la valeur 3 dans cet exemple
 
 Créer une fonction link ou compile, qui ira chercher la valeur dans les attributs : attrs.increment et la convertira en valeur (ici un nombre), grace à la fonction $eval du scope.
 
+### Créer une directive mri-dropdown
+
+On veut créer une directive qui recevra en entrée un tableau de string, et qui nous permettra de remonter la selection
+
+```
+<mri-dropdown items="['Bleu', 'Blanc', 'Rouge']" on-selection="myParentSelection : selection"></mri-dropdown>
+```
+
+Dans le template (à transformer avec ng-repeat) :
+
+```
+<div>Bleu</div>
+<div>Blanc</div>
+<div>Rouge</div>
+```
+
+Il faut qu'au clic d'une div, on remonter l'information au scope parent (celui de MyCtrl).
+Pour ça on peut utiliser dans la config de la directive `scope: {onSelection: '&'}`
+
+Voir l'exemple avec &onClose :
+https://docs.angularjs.org/guide/directive#creating-a-directive-that-wraps-other-elements
+
