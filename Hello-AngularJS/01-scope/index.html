@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS</title>
+  <script src="../node_modules/angular/angular.js"></script>
+</head>
+<body ng-app="">
+  <div>
+    Prénoms : <input ng-model="prenoms" ng-list>
+  </div>
+  <p ng-repeat="prenom in prenoms track by $index">
+    {{prenom}}
+    <button ng-show="$last">-</button>
+  </p>
+</body>
+</html>
