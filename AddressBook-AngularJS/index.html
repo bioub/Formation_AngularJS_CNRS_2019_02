@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app.module">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>AddressBook</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+  <div ng-include="'app/ui/navbar.template.html'"></div>
+
+  <div class="container-fluid" ui-view>
+
+  </div>
+
+  <script src="node_modules/angular/angular.js"></script>
+  <script src="node_modules/angular-resource/angular-resource.js"></script>
+  <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+
+  <script src="app/contacts/contact-add/contact-add.controller.js"></script>
+  <script src="app/contacts/contact-list/contact-list.directive.js"></script>
+  <script src="app/contacts/contact-show/contact-show.controller.js"></script>
+
+  <script src="app/contacts/contacts.module.js"></script>
+
+  <script src="app/app.module.js"></script>
+</body>
+</html>

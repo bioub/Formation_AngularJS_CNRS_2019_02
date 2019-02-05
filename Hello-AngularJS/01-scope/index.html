@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app.module">
 <head>
   <meta charset="UTF-8">
   <title>AngularJS</title>
   <script src="../node_modules/angular/angular.js"></script>
+  <script src="controller.js"></script>
 </head>
-<body ng-app="">
+<body ng-controller="PrenomsCtrl as prenomsCtrl">
   <div>
-    Prénoms : <input ng-model="prenoms" ng-list>
+    Prénoms : <input ng-model="prenomsCtrl.prenom">
+    <button ng-click="prenomsCtrl.add()">+</button>
   </div>
-  <p ng-repeat="prenom in prenoms track by $index">
+  <p ng-repeat="prenom in prenomsCtrl.prenoms track by $index">
     {{prenom}}
-    <button ng-show="$last">-</button>
   </p>
 </body>
 </html>
