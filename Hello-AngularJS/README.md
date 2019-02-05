@@ -71,7 +71,7 @@ Créer une fonction link ou compile, qui ira chercher la valeur dans les attribu
 On veut créer une directive qui recevra en entrée un tableau de string, et qui nous permettra de remonter la selection
 
 ```
-<mri-dropdown items="['Bleu', 'Blanc', 'Rouge']" on-selection="myParentSelection : selection"></mri-dropdown>
+<mri-dropdown items="['Bleu', 'Blanc', 'Rouge']" on-selection="myParentSelection = selection"></mri-dropdown>
 ```
 
 Dans le template (à transformer avec ng-repeat) :
