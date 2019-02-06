@@ -1,13 +1,21 @@
 (function() {
   'use strict';
 
-  var module = angular.module('contacts/contact-list/contact-list.directive', []);
+  var module = angular.module('contacts/contact-list/contact-list.directive', [
+    'contacts/contact-http.service'
+  ]);
 
-  function ContactListCtrl() {
-
+  /**
+   * @param {import('angular').IScope} $scope
+   */
+  function ContactListCtrl($scope, contactHttpService) {
+    contactHttpService.getAll()
+      .then(function(contacts) {
+        $scope.contacts = contacts;
+      });
   }
 
-  ContactListCtrl.$inject = [];
+  ContactListCtrl.$inject = ['$scope', 'contactHttpService'];
 
   /** @type {import('angular').IDirectiveFactory} */
   function abContactListDirectoryFactory() {

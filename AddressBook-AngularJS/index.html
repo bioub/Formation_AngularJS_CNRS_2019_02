@@ -10,8 +10,18 @@
 <body>
   <div ng-include="'app/ui/navbar.template.html'"></div>
 
-  <div class="container-fluid" ui-view>
+  <!-- Nested views
+    <div class="container-fluid" ui-view></div>
+  -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3" ui-view="left">
 
+      </div>
+      <div class="col-sm-9" ui-view="right">
+
+      </div>
+    </div>
   </div>
 
   <script src="node_modules/angular/angular.js"></script>
@@ -23,7 +33,15 @@
   <script src="app/contacts/contact-list/contact-list.directive.js"></script>
   <script src="app/contacts/contact-show/contact-show.controller.js"></script>
 
+  <script src="app/contacts/contact-http.service.js"></script>
+  <script src="app/contacts/contact-resource.service.js"></script>
+
   <script src="app/contacts/contacts.module.js"></script>
+
+  <script src="app/interceptors/loading.interceptor.js"></script>
+  <script src="app/interceptors/base-url.interceptor.js"></script>
+
+  <script src="app/app-params.service.js"></script>
 
   <script src="app/app.module.js"></script>
 </body>

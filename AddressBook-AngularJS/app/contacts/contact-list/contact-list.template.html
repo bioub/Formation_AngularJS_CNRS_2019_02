@@ -1,1 +1,21 @@
-<h2>Contact List</h2>
+<!--
+Nested Views
+<div class="row">
+  <div class="col-sm-3">
+    <h2>Contact List</h2>
+  </div>
+  <div class="col-sm-9" ui-view>
+
+  </div>
+</div>
+-->
+
+<div class="list-group">
+  <a class="list-group-item"
+     ng-repeat="contact in contacts track by contact.id"
+     ui-sref="contacts-show({id: contact.id})"
+     ui-sref-active="active">
+    {{contact.name}}
+  </a>
+
+</div>

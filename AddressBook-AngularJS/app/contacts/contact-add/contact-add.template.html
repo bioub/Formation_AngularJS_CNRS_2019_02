@@ -1,1 +1,26 @@
-<h2>Contact Add</h2>
+<form novalidate name="contactForm" ng-submit="contactForm.$valid && create()">
+  <div class="form-group" ng-class="{'has-error': contactForm.name.$invalid && (contactForm.$submitted || contactForm.name.$touched)}">
+    <label class="control-label">Nom</label>
+    <input name="name" type="text" class="form-control" placeholder="Nom" required ng-model="contact.name" ng-model-options="{ allowInvalid: true }">
+    <span class="help-block" ng-show="contactForm.name.$error.required && (contactForm.$submitted || contactForm.name.$touched)">Le nom est obligatoire.</span>
+  </div>
+  <div class="form-group"ng-class="{'has-error': contactForm.email.$invalid && (contactForm.$submitted || contactForm.name.$touched)}">
+    <label class="control-label">Email</label>
+    <input name="email" type="email" class="form-control" placeholder="Email" ng-model="contact.email" ng-model-options="{ allowInvalid: true }">
+    <span class="help-block" ng-show="contactForm.email.$error.email && (contactForm.$submitted || contactForm.email.$touched)">L'email n'est pas au bon format.</span>
+  </div>
+  <div class="form-group">
+    <label class="control-label">Téléphone</label>
+    <input name="phone" type="tel" class="form-control" placeholder="Téléphone" ng-model="contact.phone">
+  </div>
+  <button class="btn btn-default">Ajouter</button>
+</form>
+
+<style>
+  /* 1re option pour indiquer les erreurs se servir des ng-valid... de ng-model */
+  /*
+  form.ng-submitted input.ng-invalid, input.ng-invalid.ng-touched {
+    border: 3px solid red;
+  }
+  */
+</style>

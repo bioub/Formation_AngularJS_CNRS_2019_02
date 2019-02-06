@@ -6,7 +6,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">AddressBook</a>
+      <a class="navbar-brand" ui-sref="home">AddressBook</a>
     </div>
 
     <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
@@ -16,11 +16,13 @@
           <ul class="dropdown-menu" uib-dropdown-menu>
             <!-- <li><a href="#/contacts">Lister</a></li>
             <li><a href="#/contacts/add">Ajouter</a></li> -->
-            <li ui-sref-active="active"><a ui-sref="contact-list">Lister</a></li>
-            <li ui-sref-active="active"><a ui-sref="contact-add">Ajouter</a></li>
+            <li ui-sref-active="active"><a ui-sref="contacts">Lister</a></li>
+            <li ui-sref-active="active"><a ui-sref="contacts-add">Ajouter</a></li>
           </ul>
         </li>
       </ul>
+
+    <p class="navbar-right navbar-text" ng-show="countRequests">Loading...</p>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
